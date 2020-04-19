@@ -1,0 +1,22 @@
+<div>
+    <form method="GET" action="." id="searchform">
+        Make: <input id="searchbox" name="make" type="text" />
+        Model: <input id="searchbox" name="model" type="text" />
+        Year: <input id="searchbox" name="year" type="text" />
+        Color: <input id="searchbox" name="color" type="text" />
+        <input type="submit" value="filter">
+    </form>
+    <hr />
+    <div class="row">
+        <ul>
+        {% for cars in queryset %}
+            {{ cars.make }}
+            <span>Model: {{ cars.model }}</span>
+            <span>Year: {{ cars.year }}</span>
+            <span>Transmission: {{ cars.transmission }}</span>
+            <span>Color: {{ cars.color }}</span>
+            <hr />
+        {% endfor %}
+        </ul>
+    </div>
+</div>
